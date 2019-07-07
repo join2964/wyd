@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html style="overflow: auto; overflow-x:hidden">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>午夜档</title>
+		<link href="img/bitbug_favicon.ico" rel="icon" type="image/x-ico">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+			body {
+				width: 1920px;
+				line-height: 2em;
+				background-color: #ffffff;
+				font-family: arial, helvetica, sans-serif;
+				color: #666666;
+				font-size: 12px
+			}
+			.cantain {
+				width: 100%;
+				min-width: 800px;
+				height: 100%;
+				min-height: 600px;
+			}
+			#qj {
+				width: 100%;
+				height: 4048px;
+				border: 1px solid #000;
+				position: absolute;
+				text-align: center;
+			}
+			#dbdhl {
+				width: 100%;
+				height: 35px;
+				border: 1px solid #ccc;
+			}
+			#dbdhl img {
+				width: 25px;
+				height: 25px;
+				margin: 0px 5px;
+				float: right;
+				position: relative;
+				right: 50px;
+				margin: 5px 8px;
+				cursor: pointer;/*小手标志*/
+			}
+			#fxl {
+				width: 20px;
+				height: 155px;
+				float: right;
+				margin: -9px 55px;
+				display: none;
+			}
+			#top {
+				height: 100px;
+				border: 1px solid #ccc;
+				/*background-color: #dfefff;*/
+			}
+			#zjss {
+				height: 50px;
+				width: 610px;
+				margin-left: 650px;
+			}
+			#zjss #ss {
+				font-family: "微软雅黑";
+				background: #f3f3f3;
+				border: solid 1px #ccc;
+				height: 50px;
+				font-size: 20px;
+				padding-left: 50px;
+				width: 550px;
+				display: inline-block;
+				margin: 25px -300px;
+				position: absolute;/*定位绝对*/
+				border-radius: 50px;/*设置边框圆角*/
+				background: url(img/chazhao.png)no-repeat 0 center;
+				background-size: 40px;
+				outline: none;/*去掉边框样式   */
+			}
+			#zjss #ss2 {
+				background: #DFEFFF;
+				border: solid 1px #ccc;
+				font-size: 20px;
+				height: 52px;
+				background: #FF6f50;
+				width: 80px;
+				position: absolute;/*定位绝对*/
+				margin: 63px 0px 0px 222px;
+				top: 0px;
+				border-top-right-radius: 50px;/*设置右上边框圆角*/
+				border-bottom-right-radius: 50px;/*设置右下边框圆角*/
+				outline: none;/*去掉边框样式   */
+				cursor: pointer;/*小手标志*/
+			}
+			#middle {
+				/*设置中间盒子背景及范围*/
+				height: 3823px;
+				width: 1332px;
+				margin-left: 15%;/*盒子始终距左15%*/
+				border: 1px solid :;;
+				border-bottom: 1px solid #FFFFFF;
+			}
+			#hxdhl {
+				width: 100%;
+				height: 35px;
+			}
+			#hxdhl ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;/*溢出：隐藏*/
+				height: 35px;
+			}
+			#hxdhl li {
+				float: left;
+			}
+			#hxdhl a:link,a:visited {
+				display: block;
+				width: 324px;
+				height: 25px;
+				font-size: 20px;
+				position: relative;
+				border-left: 1px solid #ccc;
+				color: #FFFFFF;
+				background-color: #bebebe;
+				text-align: center;
+				padding: 4px;
+				text-decoration: none;
+				/*text-transform:uppercase;*/
+			}
+			#hxdhl a:hover,a:active {
+				background-color: #666;
+			}
+			#zxdhl {
+				width: 230px;
+				height: 502px;
+				position: absolute;
+				margin: 5px 5px;
+				font-size: 18px;
+				background-color: #F5F5F5;
+			}
+			#upper {
+				width: 228px;
+				height: 38px;
+				background-color: #999;
+				border: 1px solid #aaa;
+				position: relative;
+			}
+			#upper span {
+				position: relative;
+				margin: 10px;
+				top: -5px;
+				font-size: 20px;
+				color: #fff;
+			}
+			.left {
+				width: 113px;
+				height: 64px;
+				border: 1px solid #ccc;
+				float: left;
+			}
+			.right {
+				width: 113px;
+				height: 64px;
+				border: 1px solid #ccc;
+				float: right;
+				line-height: 50px;
+			}
+			.left img {
+				width: 30px;
+				height: 30px;
+				margin: 17px;
+				margin-left: -30px;
+			}
+			.right img {
+				width: 30px;
+				height: 30px;
+				margin: 17px;
+				margin-left: -30px;
+			}
+			.left span {
+				position: absolute;
+				margin-top: 20px;
+				left: 55px;
+			}
+			.right span {
+				position: absolute;
+				margin-top: 8px;
+				left: 168px;
+			}
+			.left:hover,.right:hover {
+				background-color: #fff;
+				cursor: pointer;
+			}
+			#box1 {
+				background-color: #f3f3f3;
+				left: 252px;
+				top: 5px;
+				padding: 10px 0;
+				width: 720px;
+				height: 290px;
+				position: relative;
+				overflow: hidden;
+			}
+			#lunboqi {
+				list-style: none;
+				position: absolute;
+				left: 0px;
+			}
+			#box1 #lunboqi li {
+				margin: 0 10px;
+				float: left;
+			}
+			#box1 #lunboqi li img {
+				width: 700px;
+				height: 290px;
+			}
+			#aarr {
+				position: absolute;
+				bottom: 20px;
+			}
+			#aarr a {
+				float: left;
+				width: 20px;
+				height: 20px;
+				border-radius: 10px;
+				background-color: black;
+				opacity: 0.4;
+				margin: 5px 10px;
+			}
+			#aarr a:hover {
+				opacity: 1;
+			}
+			#bb {
+				width: 720px;
+				height: 230px;
+				margin: 10px 0px 2px 250px;
+			}
+			#bb img {
+				width: 236px;
+				height: 182px;
+				float: left;
+				position: relative;
+				margin: 3px 2px;
+			}
+			#bb img:hover {
+				box-shadow: 0 0 6px #1E90FF;
+			}
+			#gonggao {
+				width: 336px;
+				height: 250px;
+				border: 1px solid #ccc;
+				position: absolute;
+				margin: -545px 990px;
+				z-index: 9999;
+			}
+			#gonggao #ggdb {
+				width: 335px;
+				height: 28px;
+				font-size: 20px;
+				border: 1px solid #ccc;
+			}
+			#ggl b {
+				color: #559B0D;
+				margin: 0px 5px;
+			}
+			#ggl li {
+				width: 330px;
+				height: 25px;
+				margin: 9px 0px;
+				text-align: left;
+				padding-left: 5px;
+				font-size: 14px;
+				cursor: pointer;/*小手标志*/
+			}
+			#ggl li:hover {
+				color: red;
+			}
+			#phb {
+				width: 336px;
+				height: 240px;
+				float: right;
+				margin: -287px 990px;
+				position: absolute;
+			}
+			#phb #bddb {
+				width: 335px;
+				height: 28px;
+				font-size: 20px;
+				border-bottom: 2px solid #ccc;
+			}
+			#phb li {
+				width: 330px;
+				height: 25px;
+				margin: 9px 0px;
+				text-align: left;
+				padding-left: 5px;
+				border-bottom: 1px dotted #ccc;
+			}
+			#bdl .bd {
+				float: left;
+				margin-left: 10px;
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				font-size: 18px;
+			}
+			#bdl a {
+				text-decoration: none;
+				margin-left: 10px;
+				color: #1E90FF;
+				cursor: pointer;/*小手标志*/
+			}
+			#bdl a:hover {
+				color: darkmagenta;
+			}
+			#bdl span {
+				margin-right: 40px;
+				float: right;
+			}
+			#m2bk {
+				height: 572px;
+				width: 1331px;
+				margin-top: -25px;
+			}
+			#m2_left {
+				height: 558px;
+				width: 230px;
+				margin: 5px 5px;
+			}
+			#m2_left #tjdb {
+				width: 215px;
+				height: 30px;
+				font-size: 20px;
+				text-align: left;
+				margin-left: 10px;
+				border-bottom: 2px solid #aaa;
+			}
+			#m2_left li {
+				width: 225px;
+				height: 25px;
+				margin: 9px 0px;
+				font-size: 14px;
+				text-align: left;
+				padding-left: 5px;
+				border-bottom: 1px dotted #ccc;
+			}
+			#m2_left b {2
+				color: #559B0D;
+				margin: 0px 5px;
+			}
+			#tjl a {
+				text-decoration: none;
+				color: #000000;
+				cursor: pointer;/*小手标志*/
+			}
+			#tjl a:hover {
+				color: red;
+			}
+			#tjl span {
+				margin-right: 10px;
+				float: right;
+				cursor: pointer;/*小手标志*/
+			}
+			#m2_right {
+				height: 558px;
+				width: 1074px;
+				float: right;
+				position: absolute;
+				margin: -563px 250px;
+			}
+			#m2_dbbq {
+				height: 30px;
+				width: 1074px;
+				border-bottom: 2px solid #ccc;
+			}
+			#m2_dbbq span {
+				float: left;
+				margin-left: 10px;
+				font-size: 20px;
+			}
+			#m2_right .xsbq {
+				width: 356px;
+				height: 175px;
+				float: left;
+			}
+			#m2_right .xsbq img {
+				width: 120px;
+				height: 155px;
+				float: left;
+				margin: 10px 10px;
+				cursor: pointer;/*小手标志*/
+			}
+			#m2_right .xsbq a {
+				font-size: 16px;
+				float: left;
+				margin: 13px 10px;
+				text-decoration: none;
+				color: #000000;
+				cursor: pointer;/*小手标志*/
+			}
+			#m2_right .xsbq span {
+				float: left;
+				margin: -141px 5px 5px 150px;
+				text-align: left;
+			}
+			#m2_right .xsbq zz {
+				float: left;
+				margin: -36px 5px 5px 150px;
+				text-align: left;
+				cursor: pointer;/*小手标志*/
+			}
+			#m2_right .xsbq zz:hover {
+				color: red;
+			}
+			#m2_right .xsbq input {
+				float: left;
+				margin: -36px 5px 5px 280px;
+				text-align: left;
+				opacity: 0.5;
+				cursor: pointer;/*小手标志*/
+			}
+			#m3bk {
+				height: 570px;
+				width: 1331px;
+			}
+			.m3_bd {
+				height: 572px;
+				width: 325px;
+				margin: 20px 3px 0px 4px;
+				float: left;
+			}
+			.m3_bd #bdcx {
+				height: 32px;
+				width: 310px;
+				border-bottom: 2px solid #ccc;
+				margin: 2px 6px;
+			}
+			#bdcx span {
+				float: left;
+				margin-left: 10px;
+				font-size: 20px;
+				color: #000;
+			}
+			#bdcx b {
+				float: right;
+				font-size: 12px;
+				margin: 5px 15px;
+				color: #aaa;
+				cursor: pointer;/*小手标志*/
+			}
+			.m3_bd #cxb {
+				height: 485px;
+				width: 318px;
+				margin: 2px 2px;
+				background-color: rgb(245, 245, 245);
+			}
+			.m3_bd #cxb li {
+				width: 310px;
+				height: 30px;
+				margin: 9px 0px;
+				font-size: 14px;
+				text-align: left;
+				padding-left: 5px;
+				border-bottom: 1px dotted #ccc;
+			}
+			.m3_bd #cxb .dbph {
+				width: 310px;
+				height: 120px;
+				margin: 9px 0px;
+				font-size: 14px;
+				text-align: left;
+				padding-left: 5px;
+				border-bottom: 1px dotted #ccc;
+				position: relative;
+			}
+			.dbph zz {
+				float: left;
+				text-align: left;
+				margin: 25px 0px 0px -85px;
+				cursor: pointer;/*小手标志*/
+			}
+			.dbph span {
+				float: left;
+				text-align: left;
+				margin: 80px -90px;
+				color: #333333;
+				position: absolute;
+			}
+			.dbph img {
+				width: 70px;
+				height: 90px;
+				float: right;
+				position: relative;
+				margin: 15px 25px 0px 0px;
+				cursor: pointer;/*小手标志*/
+			}
+			#cxb .ph {
+				float: left;
+				margin-left: 10px;
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				font-size: 18px;
+			}
+			#cxb a {
+				text-decoration: none;
+				margin-left: 10px;
+				float: left;
+				cursor: pointer;/*小手标志*/
+				color: #000;
+			}
+			#cxb a:hover {
+				color: crimson;
+			}
+			#cxb span {
+				margin-right: 40px;
+				float: right;
+			}
+			#m4bk {
+				height: 320px;
+				width: 1331px;
+			}
+			#m4bk #m4_bt {
+				height: 62px;
+				border-bottom: 1px solid #ccc;
+			}
+			#m4_bt span {
+				width: 90px;
+				height: 32px;
+				font-size: 22px;
+				font-weight: 700;
+				float: left;
+				margin: -2px 10px;
+				border-bottom: 3px solid rgb(255, 122, 0);
+			}
+			#m4_bt #box {
+				float: left;
+				font-size: 17px;
+				line-height: 50px;
+				margin-left: 20px;
+			}
+			#m4_bt #box ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;/*溢出：隐藏*/
+				height: 40px;
+				text-align: center;
+			}
+			#m4_bt #box li {
+				float: left;
+			}
+			#m4_bt #box a {
+				color: #6E6E6E;
+				text-decoration: none;
+				margin-left: 10px;
+			}
+			#m4_bt #box a:hover {
+				color: #FF7333;
+				text-decoration: underline;
+				left: 5px;
+			}
+			#m4bk #m4_ph {
+				height: 260px;
+			}
+			#m4bk .zph {
+				height: 250px;
+				width: 443px;
+				float: left;
+				border-bottom: 1px solid #ccc;
+			}
+			#m4bk .zph li {
+				height: 50px;
+				width: 441px;
+				border-left: 1px solid #ccc;
+			}
+			#m4bk .zph .num {
+				float: left;
+				margin: 15px 18px;
+				text-align: center;
+				width: 20px;
+				height: 20px;
+				font-size: 18px;
+				background-color: #AAAAAA;
+			}
+			#m4bk .zph a {
+				float: left;
+				text-decoration: none;
+				margin: 13px 15px;
+				color: #666666;
+				font-size: 16px;
+				cursor: pointer;/*小手标志*/
+			}
+			#m4bk .zph a:hover {
+				color: #8B008B;
+				text-decoration: underline;/*设置底部横条样式*/
+			}
+			#m4bk .zph span {
+				line-height: 50px;
+				font-size: 14px;
+			}
+			#m5bk {
+				height: 112px;
+				width: 1331px;
+			}
+			#m5bk img {
+				height: 112px;
+				width: 1330px;
+			}
+			#m6bk {
+				height: 922px;
+				width: 1330px;
+				margin: 15px 0px;
+			}
+			#m6bk #m6_mrbq {
+				height: 72px;
+				width: 1330px;
+				margin-bottom: 8px;
+				border-top: 4px solid #FF7333;
+			}
+			#m6bk #m6_mrbq span {
+				height: 62px;
+				width: 100px;
+				font-size: 30px;
+				font-weight: 700;
+				line-height: 80px;
+				color: #1E90FF;
+			}
+			#m6bk .m6_mr img {
+				height: 236px;
+				width: 177px;
+				margin: 15px auto;
+			}
+			#m6bk .m6_mr li {
+				height: 332px;
+				width: 219px;
+				float: left;
+			}
+			#m6bk .m6_mr img,h3,em {
+				cursor: pointer;/*小手标志*/
+			}
+			#m6bk .m6_mr img:hover {
+				height: 239px;
+				width: 179px;
+				box-shadow: 0 0 6px #1E90FF;
+			}
+			#m6bk .m6_mr h3:hover {
+				color: #1E90FF;
+			}
+			#m6_mrtj {
+				height: 234px;
+				width: 1330px;
+				margin-top: 20px;
+				float: left;
+			}
+			.m6_mrlx {
+				height: 232px;
+				width: 332px;
+				float: left;
+			}
+			.m6_mrlx .m6_mrspan {
+				height: 64px;
+				width: 330px;
+				float: left;
+			}
+			.m6_mrlx .m6_mrspan span {
+				font-size: 25px;
+				line-height: 64px;
+				margin-left: -220px;
+				color: #555;
+				border-bottom: 2px solid #aaa;
+			}
+			.m6_mrlx li {
+				height: 54px;
+				width: 332px;
+				float: left;
+				color: #000;
+			}
+			.m6_mrlx li b {
+				float: left;
+				text-align: left;
+				margin: 20px 30px;
+				font-size: 15px;
+				color: #444;
+			}
+			.m6_mrlx li span {
+				float: right;
+				margin-right: 40px;
+				line-height: 64px;
+				font-size: 15px;
+				color: #888;
+			}
+			.m6_mrlx b:hover,span:active {
+				color: #1E90FF;
+			}
+			#m6_lb {
+				height: 225px;
+				width: 1330px;
+				border: 1px solid #aaa;
+				margin-top: 25px;
+				float: left;
+			}
+			#m6_lb #m6_hwbq {
+				height: 225px;
+				width: 180px;
+				border: 1px solid #aaa;
+				background-color: #FF0000;
+			}
+			#m6_lb #m6_hwbq span {
+				color: #F2FCFC;
+				writing-mode: tb-rl;
+				margin-top: 70px;
+				font-size: 22px;
+			}
+			#m7bk {
+				height: 480px;
+				width: 1330px;
+				margin-top: 20px;
+			}
+			#m7bk #m7_manbq {
+				height: 75px;
+				width: 1330px;
+			}
+			#m7bk #m7_manbq span {
+				height: 30px;
+				font-size: 25px;
+				float: left;
+				margin: 26px 20px;
+				font-weight: 700;
+				border-bottom: 3px solid #428000;
+			}
+			#m7bk #m7_np {
+				height: 405px;
+				width: 1330px;
+			}
+			#m7bk #m7_manle {
+				height: 405px;
+				width: 220px;
+				float: left;
+				margin-left: -120px;
+				background-color: #DFEEFF;
+			}
+			#m7bk #m7_manle img {
+				height: 245px;
+				width: 180px;
+				margin: 10px auto;
+				cursor: pointer;/*小手标志*/
+			}
+			#m7bk #m7_manle span {
+				font-size: 20px;
+			}
+			#m7bk #m7_manle .zz {
+				width: 100px;
+				height: 25px;
+				border: 1px solid #aaa;
+				margin: 15px auto;
+				font-size: 14px;
+				border-radius: 50px;/*设置边框圆角*/
+			}
+			#m7bk #m7_manle zz {
+				color: #000;
+			}
+			#m7bk #m7_manle a:hover {
+				color: #FF6F50;
+				text-decoration: underline;/*设置底部横条样式*/
+				cursor: pointer;/*小手标志*/
+			}
+			#m7bk #m7_mancen {
+				width: 780px;
+				height: 405px;
+				float: left;
+				margin-left: 10px;
+			}
+			#m7bk #m7_mancen li {
+				width: 388px;
+				height: 133px;
+				float: left;
+			}
+			#m7bk #m7_mancen li img {
+				width: 88px;
+				height: 113px;
+				border: 1px solid #aaa;
+				margin: 8px 20px;
+				float: left;
+				cursor: pointer;/*小手标志*/
+			}
+			#m7bk #m7_mancen li a {
+				width: 388px;
+				height: 33px;
+				position: absolute;
+				margin: 2px -280px;
+				font-size: 16px;
+				text-decoration: none;
+			}
+			#m7bk #m7_mancen li span {
+				float: left;
+				width: 228px;
+				height: 33px;
+				margin: -100px 0px 0px 130px;
+				text-align: left;
+			}
+			#m7bk #m7_mancen li zz {
+				float: left;
+				margin: -25px 130px;
+				color: #000;
+			}
+			#m7bk #m7_mancen li span:hover,#m7bk #m7_mancen zz:hover {
+				color: #FF6F50;
+				text-decoration: underline;/*设置底部横条样式*/
+				cursor: pointer;/*小手标志*/
+			}
+			#m7bk #m7_mancen li input {
+				float: right;
+				margin: -25px 20px;
+				opacity: 0.7;
+			}
+			#m7bk #m7_np #m7_xsb {
+				width: 285px;
+				height: 405px;
+				border-top: 2px solid #aaa;
+				float: right;
+			}
+			#m7bk #m7_np #m7_xsb li {
+				width: 285px;
+				height: 40px;
+				float: right;
+			}
+			#m7bk #m7_np #m7_xsb li b {
+				float: left;
+				font-size: 15px;
+				margin: 8px 8px;
+			}
+			#m7bk #m7_np #m7_xsb li a {
+				float: left;
+				font-size: 15px;
+				margin: 8px 3px;
+				text-decoration: none;
+				color: #333;
+			}
+			#m7bk #m7_np #m7_xsb li a:hover,b:hover{
+				color: #FF0000;
+				text-decoration: underline;/*设置底部横条样式*/
+			}
+			#m8bk{
+				width: 1330px;
+				height: 210px;
+				margin-top: 30px;
+			}
+			#m8bk #m8_ljbq{
+				width: 1330px;
+				height: 40px;
+				border-bottom: 1px solid #aaa;
+			}
+			#m8bk #m8_ljbq span{
+				width: 100px;
+				height: 34px;
+				font-size: 25px;
+				float: left;
+				font-weight: 700;
+				margin: 5px 20px;
+				border-bottom:3px solid #aaa;
+			}
+			#m8bk #m8_yqlj{
+				width: 1330px;
+				height: 168px;
+			}
+			#m8bk #m8_yqlj a{
+				margin: 10px 40px;
+				float: left;
+				text-align:left;
+				color: #1E90FF;
+				text-decoration: none;
+			}
+			#bottom {
+				width: 100%;
+				height: 80px;
+				border-top: 2px solid #1E90FF;
+				position: absolute;
+				float: left;
+				bottom: 0;
+			}
+			#bottom span{
+				font-size: 13px;
+				color: #000000;
+			}
+		</style>
+		<script type="text/javascript" src="js/tools.js"></script>
+		<script type="text/javascript">
+			/*var a=document.getElementsByClassName("left");
+			for(var i=0;i<a.length;i++){
+				if(a[i]%2){
+					   a[i].style.backgroundColor="red";
+				}
+			}*/
+
+			window.onload = function() {
+				var lunboqi = document.getElementById("lunboqi");
+				var lis = lunboqi.getElementsByTagName("img");
+				//调整ul的总大小，使其能够存放所有的li
+				lunboqi.style.width = lis.length * 720 + "px";
+
+				var box1 = document.getElementById("box1");
+				var aarr = document.getElementById("aarr");
+				var as = aarr.getElementsByTagName("a");
+				//使超链接组居中显示
+				aarr.style.left = (box1.offsetWidth - as.length * 30) / 2 + "px";
+
+				//图片的索引
+				var index = 0;
+				//调整默认索引的颜色
+				as[index].style.opacity = 1;
+
+				//自动切换的定时器标识
+				var timer;
+				autoChange();
+
+				//为每个超链接绑定单机响应函数
+				for(var i = 0; i < as.length; ++i) {
+					as[i].num = i;
+					as[i].onclick = function() {
+						//点击时关闭自动切换功能
+						clearInterval(timer);
+						index = this.num;
+						seta();
+						animate(lunboqi, "left", -720 * index, 50, function() {
+							//执行完毕后执行
+							//开始自动切换
+							autoChange();
+						});
+					};
+				}
+
+				//自动切换图片
+				function autoChange() {
+					timer = setInterval(function() {
+						index = (++index) % lis.length;
+						animate(lunboqi, "left", -720 * index, 40, function() {
+							seta();
+						});
+					}, 2000);
+				}
+
+				//设置超链接的样式
+				function seta() {
+					if(index >= lis.length - 1) {
+						index = 0;
+						lunboqi.style.left = 0 + "px";
+					}
+					//a全部设置为初始值
+					for(var i = 0; i < as.length; ++i) {
+						as[i].style.opacity = "";
+					}
+					//设置当前索引指定的a的样式
+					as[index].style.opacity = 1;
+				}
+
+				//实现动画过程的函数
+				function animate(obj, attr, target, speed, callback) {
+					clearInterval(obj.timer);
+					var current = parseInt(getStyle(obj, attr));
+					if(current > target) {
+						speed = -speed;
+					}
+					obj.timer = setInterval(function() {
+						var oldValue = parseInt(getStyle(obj, attr));
+						var newValue = oldValue + speed;
+						if((speed < 0 && newValue < target) || (speed > 0) && newValue > target) {
+							newValue = target;
+						}
+						obj.style[attr] = newValue + "px";
+						if(newValue == target) {
+							clearInterval(obj.timer);
+							//callback存在则执行callback函数
+							callback && 　callback();
+						}
+					}, 50);
+				}
+
+				//获取obj对象的name属性
+				function getStyle(obj, name) {
+					if(window.getComputedStyle) {
+						return getComputedStyle(obj, null)[name];
+					} else {
+						//兼容IE8
+						return obj.currentStyle[name];
+					}
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<!--<MARQUEE scrollAmount=10 direction=down behavior=alternate >
+		<MARQUEE scrollAmount=10 behavior=alternate >
+			<IMG src=".jpg">
+				<FONT size=5 >
+					<B style="color: #FF6F00;">欢迎您的到来</B>
+					<IMG src=".jpg">
+				</FONT>
+		</MARQUEE>
+	</MARQUEE>-->
+
+		<div id="qj">
+			<!--
+        	作者：1395023445@qq.com
+        	时间：2019-05-20
+        	描述：顶部登录导航
+        -->
+			<div id="dbdhl">
+				<img src="img/fenxiang.png" title="分享" id="fx" onclick="document.getElementById('fxl').style.display = 'block'; " onmouseout="document.getElementById('fxl').style.display = 'none' ;" />
+				<a href="ls.html" target="_blank"><img src="img/lishi.png" title="历史" /></a>
+				<a href="sc.html" target="_blank"><img src="img/xihuan.png" title="收藏" /></a>
+				<a href="sj.html" target="_blank"><img src="img/yuedu.png" title="书架" /></a>
+				<a href="dl.html" target="_blank"><img src="img/wode.png" title="登录" /></a>
+			</div>
+			<!--
+        	作者：1395023445@qq.com
+        	时间：2019-05-20
+        	描述：顶部搜索栏
+        -->
+			<div id="top">
+				<!--<div id="fxl" onmouseover="document.getElementById('fxl').style.display = 'block'; " onmouseout="document.getElementById('fxl').style.display = 'none' ;">
+				<div class="bdsharebuttonbox">
+					<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到qq空间"></a>
+					<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+					<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+				</div>
+			</div>-->
+				<img src="img/wyd1.png" title="午夜档" style="width: 200px;height:100px;margin:-45px;float: left;left:320px;margin-top:5px;position: absolute;overflow:hidden;cursor:pointer;" />
+				<div id="zjss">
+					<input type="text" name="sousuo" placeholder="输入搜索内容" id="ss" />
+					<input type="submit" value="搜索" id="ss2">
+				</div>
+			</div>
+			<div id="middle">
+				<!--
+        	作者：1395023445@qq.com
+        	时间：2019-05-20
+        	描述：中间第一板块
+        -->
+				<div id="hxdhl">
+					<ul>
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">排行</a>
+						</li>
+						<li>
+							<a href="#">女频</a>
+						</li>
+						<li>
+							<a href="#">男频</a>
+						</li>
+					</ul>
+				</div>
+				<div id="zxdhl">
+					<div id="upper"><img src="img/toggle.png" width="30px" height="25px" style="margin-top: 6px; margin-left: -70px;"><span>作品分类</span></div>
+					<div class="left"><img src="img/xuanhuan.png" title="玄幻" /><span>玄幻</span></div>
+					<div class="right"><img src="img/qihuan.png" title="奇幻" /><span>奇幻</span></div>
+					<div class="left"><img src="img/wuxia.png" title="武侠" /><span>武侠</span></div>
+					<div class="right"><img src="img/xianxia.png" title="仙侠" /><span>仙侠</span></div>
+					<div class="left"><img src="img/dushi.png" title="都市" /><span>都市</span></div>
+					<div class="right"><img src="img/xianshi.png" title="现实" /><span>现实</span></div>
+					<div class="left"><img src="img/junshi.png" title="军事" /><span>军事</span></div>
+					<div class="right"><img src="img/lishij.png" title="历史" /><span>历史</span></div>
+					<div class="left"><img src="img/youxi.png" title="游戏" /><span>游戏</span></div>
+					<div class="right"><img src="img/tiyu.png" title="体育" /><span>体育</span></div>
+					<div class="left"><img src="img/kehuan.png" title="科幻" /><span>科幻</span></div>
+					<div class="right"><img src="img/lingyi.png" title="灵异" /><span>灵异</span></div>
+					<div class="left"><img src="img/nvxingdajiangtang.png" title="女生网" /><span>女生网</span></div>
+					<div class="right"><img src="img/erciyuan.png" title="二次元" /><span>二次元</span></div>
+				</div>
+				<!--
+            	作者：1395023445@qq.com
+            	时间：2019-05-25
+            	描述：轮播图
+            -->
+				<div id="box1">
+					<ul id="lunboqi">
+						<li><img src="img/6.jpg" alt="" /></li>
+						<li><img src="img/7.png" alt="" /></li>
+						<li><img src="img/8.jpeg" alt="" /></li>
+						<li><img src="img/9.jpg" alt="" /></li>
+						<li><img src="img/10.jpg" alt="" /></li>
+						<!-- 非常巧妙的实现了轮播器的自然切换 -->
+						<li><img src="img/6.jpg" alt="" /></li>
+					</ul>
+					<div id="aarr">
+						<a href="javascript:;"></a>
+						<a href="javascript:;"></a>
+						<a href="javascript:;"></a>
+						<a href="javascript:;"></a>
+						<a href="javascript:;"></a>
+					</div>
+				</div>
+				<!--
+            	作者：1395023445@qq.com
+            	时间：2019-05-25
+            	描述：轮播图底部推荐标签
+            -->
+				<div id="bq">
+					<ul id="bb">
+						<li><img src="img/1.jpg" /></li>
+						<li><img src="img/2.jpg" /></li>
+						<li><img src="img/3.jpg" /></li>
+					</ul>
+				</div>
+				<!--
+            	作者：1395023445@qq.com
+            	时间：2019-05-25
+            	描述：公告栏
+            -->
+				<div id="gonggao">
+					<div id="ggdb">
+						<span>公告栏</span>
+					</div>
+					<div id="ggl">
+						<ul>
+							<li><b>[公告]</b>这是很长很长很长很长很长公告啊</li>
+							<li><b>[资讯]</b>这是很长很长很长资讯啊</li>
+							<li><b>[活动]</b>这是很活动啊</li>
+							<li><b>[公告]</b>这是很长公告啊</li>
+							<li><b>[资讯]</b>这是很长很长很长很长很长很长很长资讯啊</li>
+							<li><b>[活动]</b>这是很长很长很长活动啊</li>
+						</ul>
+					</div>
+				</div>
+				<!--
+            	作者：1395023445@qq.com
+            	时间：2019-05-25
+            	描述：榜单栏衔接公告栏
+            -->
+				<div id="phb">
+					<div id="bddb">
+						<span>榜单栏</span>
+					</div>
+					<div id="bdl">
+						<ul>
+							<li>
+								<div class="bd" style=" background-color: red;">1</div>
+								<a href="#">斗罗大陆</a><span>1720</span></li>
+							<li>
+								<div class="bd" style="background-color: #FF7333;">2</div>
+								<a href="#">大主宰</a><span>1120</span></li>
+							<li>
+								<div class="bd" style="background-color: yellow;">3</div>
+								<a href="#">永夜君主</a><span>420</span></li>
+							<li>
+								<div class="bd">4</div>
+								<a href="#">斗破苍穹</a><span>332</span></li>
+							<li>
+								<div class="bd">5</div>
+								<a href="#">体尊</a><span>156</span></li>
+							<li>
+								<div class="bd">6</div>
+								<a href="#">完美世界</a><span>71</span></li>
+						</ul>
+					</div>
+				</div>
+				<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-20
+                	描述：中间第二板块
+                -->
+				<div id="m2bk">
+					<div id="m2_left">
+						<div id="tjdb">
+							<span>本周强推</span>
+						</div>
+						<div id="tjl">
+							<ul>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li><b>[玄幻]</b>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+							</ul>
+						</div>
+					</div>
+					<div id="m2_right">
+
+						<div id="m2_dbbq"><span>精品推荐</span></div>
+						<div class="xsbq">
+							<img src="img/11.jpg" />
+							<a href="#">沧澜洗剑录</a>
+							</br>
+							<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+							<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+						</div>
+						<div class="xsbq">
+							<img src="img/12.jpg" />
+							<a href="#">我劝你善良</a>
+							</br>
+							<span>灵气复苏时代来临，动物大量觉醒灵智，人类统治面临危机！叮，系统开启……我劝你善良！</span>
+							<zz>骑着毛驴找猪</zz><input type="button" value="二次元" />
+						</div>
+						<div class="xsbq">
+							<img src="img/13.jpg" />
+							<a href="#">万道仙师</a>
+							</br>
+							<span>获得万道仙师系统，别人眼里的废柴，其实都是隐藏的世界主角！</span>
+							<zz>萌萌哒的铁匠</zz><input type="button" value="奇幻玄幻" />
+						</div>
+						<div class="xsbq">
+							<img src="img/14.jpg" />
+							<a href="#">葬经</a>
+							</br>
+							<span>世红白喜事铺的老板张君大意受到重创丢了肉身，不得已先附女体，寻找自己的原身。</span>
+							<zz>天眼看世界</zz><input type="button" value="悬疑灵异" />
+						</div>
+						<div class="xsbq">
+							<img src="img/15.jpg" />
+							<a href="#">医武兵王</a>
+							</br>
+							<span>尘封二十年惊天秘密被掀开，各方势力来势汹汹。 简单、暴力是我做事手段，生死看淡，不服就干。</span>
+							<zz>我是三羊</zz><input type="button" value="都市娱乐" />
+						</div>
+						<div class="xsbq">
+							<img src="img/16.jpg" />
+							<a href="#">全能医生</a>
+							</br>
+							<span>风华正茂的年纪，岂能被儿女情长耽误？姑娘，警告你别粘着我，我要去拯救世界！</span>
+							<zz>我是愤怒</zz><input type="button" value="都市娱乐" />
+						</div>
+						<div class="xsbq">
+							<img src="img/17.jpg" />
+							<a href="#">关于电影的故事</a>
+							</br>
+							<span>关于电影的故事</span>
+							<zz>老徐牧羊</zz><input type="button" value="娱乐明星" />
+						</div>
+						<div class="xsbq">
+							<img src="img/18.jpg" />
+							<a href="#">神魔供应商</a>
+							</br>
+							<span>专业种植，培养，租借，出售，回收一切神魔，一条龙服务。</span>
+							<zz>何处不染尘</zz><input type="button" value="东方玄幻" />
+						</div>
+						<div class="xsbq">
+							<img src="img/19.jpg" />
+							<a href="#">大劫主</a>
+							</br>
+							<span>苦修成绩作废，而后从杂役弟子做起，借一卷推衍之术，执掌苍生大劫！</span>
+							<zz>黑山老鬼</zz><input type="button" value="修真文明" />
+						</div>
+					</div>
+				</div>
+				<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-21
+                	描述：中间第三板块
+                -->
+				<div id="m3bk">
+					<div class="m3_bd">
+						<div id="bdcx">
+							<span>24小时畅销榜</span>
+							<b>更多&nbsp;></b>
+						</div>
+						<div id="cxb">
+							<ul>
+								<li class="dbph">
+									<div class="ph" style=" color: #CD0606;">1</div>
+									<a href="#">横推三千世界</a>
+									<zz>三九蝎</zz><span>431.4&nbsp;万字</span><img src="img/20.jpg"></li>
+								<li>
+									<div class="ph" style=" color: #FF7333;">2</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph" style=" color: yellow">3</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">4</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">5</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">6</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">7</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">8</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">9</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">10</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="m3_bd">
+						<div id="bdcx">
+							<span>用户周点击榜</span>
+							<b>更多&nbsp;></b>
+						</div>
+						<div id="cxb">
+							<ul>
+								<li class="dbph">
+									<div class="ph" style=" color: #CD0606;">1</div>
+									<a href="#">横推三千世界</a>
+									<zz>三九蝎</zz><span>117966&nbsp;点击数</span><img src="img/21.jpg"></li>
+								<li>
+									<div class="ph" style=" color: #FF7333;">2</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph" style=" color: yellow">3</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">4</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">5</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">6</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">7</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">8</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">9</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">10</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="m3_bd">
+						<div id="bdcx">
+							<span>周推荐榜</span>
+							<b>更多&nbsp;></b>
+						</div>
+						<div id="cxb">
+							<ul>
+								<li class="dbph">
+									<div class="ph" style=" color: #CD0606;">1</div>
+									<a href="#">横推三千世界</a>
+									<zz>三九蝎</zz><span>126359&nbsp;推荐票</span><img src="img/22.jpg"></li>
+								<li>
+									<div class="ph" style=" color: #FF7333;">2</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph" style=" color: yellow">3</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">4</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">5</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">6</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">7</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">8</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">9</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">10</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="m3_bd">
+						<div id="bdcx">
+							<span>渠道榜</span>
+							<b>更多&nbsp;></b>
+						</div>
+						<div id="cxb">
+							<ul>
+								<li class="dbph">
+									<div class="ph" style=" color: #CD0606;">1</div>
+									<a href="#">横推三千世界</a>
+									<zz>三九蝎</zz><span>431.4&nbsp;万字</span><img src="img/23.jpg"></li>
+								<li>
+									<div class="ph" style=" color: #FF7333;">2</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph" style=" color: yellow">3</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">4</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">5</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">6</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">7</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">8</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">9</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+								<li>
+									<div class="ph">10</div>
+									<a href="#">横推三千世界</a><span>三九蝎</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-25
+                	描述：衔接第三板块
+                -->
+				<div id="m4bk">
+					<div id="m4_bt">
+						<span id="m4_phbbq">总排行榜</span>
+						<div id="box">
+							<ul>
+								<li>
+									<a href="#">更新</a>
+								</li>
+								<li>
+									<a href="#">推荐</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="m4_ph">
+						<ul class="zph">
+							<li>
+								<div class="num" style=" background-color: red;">1</div>
+								<a href="#">斗罗大陆</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num" style="background-color: #FF7333;">2</div>
+								<a href="#">大主宰</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num" style="background-color: yellow;">3</div>
+								<a href="#">永夜君主</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">4</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">5</div>
+								<a href="#">体尊</a><span>2019-05-25 14:20</span></li>
+						</ul>
+						<ul class="zph">
+							<li>
+								<div class="num">6</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">7</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">8</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">9</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">10</div>
+								<a href="#">体尊</a><span>2019-05-25 14:20</span></li>
+						</ul>
+						<ul class="zph">
+							<li>
+								<div class="num">11</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">12</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">13</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">14</div>
+								<a href="#">斗破苍穹</a><span>2019-05-25 14:20</span></li>
+							<li>
+								<div class="num">15</div>
+								<a href="#">体尊</a><span>2019-05-25 14:20</span></li>
+						</ul>
+					</div>
+				</div>
+					<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-26
+                	描述：第五广告板块
+                -->
+					<div id="m5bk">
+						<img src="img/dt2.gif">
+					</div>
+					<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-26
+                	描述：第六女频板块
+                -->
+					<div id="m6bk">
+						<div id="m6_mrbq">
+							<span>女频精选</span>
+						</div>
+						<ul class="m6_mr">
+							<li>
+								<dl>
+									<dt><img src="img/24.jpg"></dt>
+									<dd>
+										<h3 title="总裁爹地超强势">总裁爹地超强势</h3>
+										<em class="author">陌者羽娘</em>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="img/22.jpg"></dt>
+									<dd>
+										<h3 title="儿子，认好了：这是你总裁爹">儿子，认好了：这是你总裁爹</h3>
+										<em class="author">叫我林抠门</em>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="img/23.jpg"></dt>
+									<dd>
+										<h3 title="凤逆九天：至尊狂妃">凤逆九天：至尊狂妃</h3>
+										<em class="author">陌陌云兔</em>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="img/24.jpg"></dt>
+									<dd>
+										<h3 title="权少霸爱，夫人有喜了">权少霸爱，夫人有喜了</h3>
+										<em class="author">畏寒者</em>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="img/25.jpg"></dt>
+									<dd>
+										<h3 title="南妹北漂">南妹北漂</h3>
+										<em class="author">信夫</em>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt><img src="img/26.jpg"></dt>
+									<dd>
+										<h3 title="法律守夜人">法律守夜人</h3>
+										<em class="author">橘子气泡水</em>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<!--
+                    	作者：1395023445@qq.com
+                    	时间：2019-05-26
+                    	描述：第六板块类型小说推荐衔接女频
+                    -->
+						<div id="m6_mrtj">
+							<div class="m6_mrlx">
+								<div class="m6_mrspan">
+									<span>武仙侠侠</span>
+								</div>
+								<ul>
+
+									<li>
+										<a href="http://www.zhulang.com/667621/" target="_blank">
+											<b title="六道擒天">六道擒天</b>
+											<span>貌然</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="最强直男系统">最强直男系统</b>
+											<span>吃焙子</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="祈梦阁">祈梦阁</b>
+											<span>四月二十七</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="m6_mrlx">
+								<div class="m6_mrspan">
+									<span>玄幻异能</span>
+								</div>
+								<ul>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="祈梦阁">祈梦阁</b>
+											<span>四月二十七</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/667621/" target="_blank">
+											<b title="六道擒天">六道擒天</b>
+											<span>貌然</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="最强直男系统">最强直男系统</b>
+											<span>吃焙子</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="m6_mrlx">
+								<div class="m6_mrspan">
+									<span>古代言情</span>
+								</div>
+								<ul>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="祈梦阁">祈梦阁</b>
+											<span>四月二十七</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/667621/" target="_blank">
+											<b title="六道擒天">六道擒天</b>
+											<span>貌然</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="最强直男系统">最强直男系统</b>
+											<span>吃焙子</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="m6_mrlx">
+								<div class="m6_mrspan">
+									<span>现代言情</span>
+								</div>
+								<ul>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="祈梦阁">祈梦阁</b>
+											<span>四月二十七</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/667621/" target="_blank">
+											<b title="六道擒天">六道擒天</b>
+											<span>貌然</span>
+										</a>
+									</li>
+									<li>
+										<a href="http://www.zhulang.com/663484/" target="_blank">
+											<b title="最强直男系统">最强直男系统</b>
+											<span>吃焙子</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--
+                    	作者：1395023445@qq.com
+                    	时间：2019-05-26
+                    	描述：第六板块小说轮播衔接女频
+                    -->
+						<div id="m6_lb">
+							<div id="m6_hwbq">
+								<span>红文馆</span>
+							</div>
+							<div id="m6_loop">
+
+							</div>
+						</div>
+					</div>
+					<!--
+                	作者：1395023445@qq.com
+                	时间：2019-05-26
+                	描述：第七男频板块
+                -->
+					<div id="m7bk">
+						<div id="m7_manbq">
+							<span>男频精选</span>
+						</div>
+						<div id="m7_np">
+							<div id="m7_manle">
+								<img src="img/20.jpg" /></br>
+								<span>凤凰诏</span></br>
+								<div class="zz">
+									<zz>作者:&ensp;
+										<a>狸子</a>
+									</zz>
+								</div>
+							</div>
+							<div id="m7_mancen">
+								<ul>
+									<li>
+										<img src="img/14.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+									<li>
+										<img src="img/15.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+									<li>
+										<img src="img/16.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+									<li>
+										<img src="img/17.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+									<li>
+										<img src="img/18.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+									<li>
+										<img src="img/19.jpg" />
+										<a href="#">沧澜洗剑录</a>
+										</br>
+										<span>世如沧澜，人如一粟，古风以不屈之灵魂，不灭之意志，斗邪魔、斩宿命、创新法、开纪元，立于四界</span>
+										<zz>铁锁儿</zz><input type="button" value="武侠仙侠" />
+									</li>
+								</ul>
+							</div>
+							<div id="m7_xsb">
+								<ul>
+									<li><b>「现代言情」</b>
+										<a href="#">二宝驾到</a>
+									</li>
+									<li><b>「游戏竞技」</b>
+										<a href="#">游戏人生之六道轮回</a>
+									</li>
+									<li><b>「现代言情」</b>
+										<a href="#">彼岸花开，时正盛</a>
+									</li>
+									<li><b>「浪漫青春」</b>
+										<a href="#">月色弥漫的星空</a>
+									</li>
+									<li><b>「现代言情」</b>
+										<a href="#">张晨曦，我喜欢你啊</a>
+									</li>
+									<li><b>「浪漫青春」</b>
+										<a href="#">踏过云海，与你相遇</a>
+									</li>
+									<li><b>「现代言情」</b>
+										<a href="#">沉沦暖风中</a>
+									</li>
+									<li><b>「现代言情」</b>
+										<a href="#">传达到你的耳畔</a>
+									</li>
+									<li><b>「古代言情」</b>
+										<a href="#">长安少年谣</a>
+									</li>
+									<li><b>「现代言情」</b>
+										<a href="#">重生之明月何皎皎</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="m8bk">
+						<div id="m8_ljbq">
+							<span>友情链接</span>
+						</div>
+						<div id="m8_yqlj">
+							<a targer="_blank" href="http://yc.ireader.com.cn/">掌阅小说网 </a>
+							<a targer="_blank" href="http://www.19lou.com/">19楼  </a>
+							<a targer="_blank" href="http://book.qq.com/">腾讯文学
+							<a targer="_blank" href="http://www.zongheng.com/">纵横中文网
+							<a targer="_blank" href="http://www.ihuaben.com/">话本小说
+							<a targer="_blank" href="http://www.xuexila.com/">学习啦 
+							<a targer="_blank" href="http://www.4yt.net">四月天 
+							<a targer="_blank" href="http://www.offcn.com">中公公务员网 
+							<a targer="_blank" href="http://www.ximalaya.com/explore/">有声小说
+							<a targer="_blank" href="http://book.114la.com/">114la小说 
+							<a targer="_blank" href="http://www.tiexue.net">铁血军事
+							<a targer="_blank" href="http://zixun.jia.com">装修资讯 
+							<a targer="_blank" href="http://b.faloo.com/">飞卢小说网 
+							<a targer="_blank" href="http://www.sxcnw.net">书香电子书
+							<a targer="_blank" href="http://www.docin.com/">豆丁网 
+							<a targer="_blank" href="http://www.zhaoxiaoshuo.com/">找小说 
+							<a targer="_blank" href="http://www.shuhai.com/">书海小说网 
+							<a targer="_blank" href="http://www.bayueju.com/">八月居
+							<a targer="_blank" href="http://www.91wan.com/">91wan游戏 
+							<a targer="_blank" href="http://www.kanshu.com/">看书网小说 
+							<a targer="_blank" href="http://www.52pk.com/">52PK游戏网
+							<a targer="_blank" href="http://www.hongshu.com/">红薯小说网 
+							<a targer="_blank" href="http://www.t262.com/">作文网 
+							<a targer="_blank" href="http://www.xiazaiba.com/">下载吧 
+							<a targer="_blank" href="http://www.hengyan.com/">恒言中文网
+							<a targer="_blank" href="http://www.1xiezuo.com/">壹写作
+						</div>
+					</div>
+			</div>
+			<div id="bottom">
+				<span>午夜档没有弹窗广告，所有小说都能免费阅读。找好看的小说网站，就到午夜档。</br>
+				Copyright © 2019 午夜档(www.pilipilipong.com) All Rights Reserved. </span>
+				
+			</div>
+		</div>
+	</body>
+
+</html>
